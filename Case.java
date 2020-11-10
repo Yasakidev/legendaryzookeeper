@@ -2,9 +2,9 @@ package animalrescuediderot;
 
 public class Case {
     private int value;
-
     public Case(int v){
         this.value = v;
+
     }
 
     public Case(){
