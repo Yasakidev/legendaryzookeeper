@@ -14,11 +14,11 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         InputStream stream = new FileInputStream("src/animalrescuediderot/assets/square.jpg");
         Image image = new Image(stream);
-        ImageView [] imageView = new ImageView[8];
+        ImageView [] imageView = new ImageView[20];
         Group root = new Group();
         HBox h = new HBox();
         h.setSpacing(5);
-        for(int i = 0; i < 8; i++) {
+        for(int i = 0; i < 20; i++) {
             imageView[i] = new ImageView();
             imageView[i].setImage(image);
             h.getChildren().add(imageView[i]);
@@ -29,7 +29,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         launch(args);
         //CURRENT WORKING DIRECTORY : System.out.println(System.getProperty("user.dir"));
     }
