@@ -12,14 +12,14 @@ public class HelloImage extends AnchorPane {
 
     public HelloImage() {
 
-        this.image = getImage("square.png");
+        this.image = getImage("src/animalrescuediderot/assets/square.png");
         this.getChildren().add(this.image);
         this.image.setLayoutX(10);
         this.image.setLayoutY(10);
-        final String cssDefault = "-fx-border-color: blue;\n"
+        /*final String cssDefault = "-fx-border-color: blue;\n"
                 + "-fx-border-insets: 5;\n"
                 + "-fx-border-width: 3;\n";
-        this.setStyle(cssDefault);
+        this.setStyle(cssDefault);*/
     }
 
 
@@ -32,7 +32,8 @@ public class HelloImage extends AnchorPane {
             image = new ImageView(fileImage);
             return image;
         }catch (Exception e){
-            System.out.println("ERR"+ e.getMessage());
+            System.out.println("ERR : "+ e.getMessage());
+            System.out.println("Current dir is : " + System.getProperty("user.dir"));
             System.exit(1);
         }
         return  null;
