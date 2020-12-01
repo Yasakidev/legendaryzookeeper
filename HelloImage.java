@@ -16,11 +16,12 @@ public class HelloImage extends AnchorPane {
         handler = new MouseEventsHandler(); //Init Handler Common to All HelloImages.
     }
 
-    public HelloImage() {
-        this.image = importImage("src/animalrescuediderot/assets/square.png");
+    public HelloImage(Grid grid, String url) {
+        this.image = importImage(url);
+        this.image.setFitHeight(50);
+        this.image.setFitWidth(50);
         this.getChildren().add(this.image);
-        this.image.setLayoutX(10);
-        this.image.setLayoutY(10);
+        grid.getMainPane().getChildren().add(this);
         this.setEventHandler(MouseEvent.MOUSE_CLICKED, handler); //Fires click event.
     }
 
@@ -37,7 +38,7 @@ public class HelloImage extends AnchorPane {
             return image;
         }catch (Exception e){
             System.out.println("ERR : "+ e.getMessage());
-            System.out.println("Current dir is : " + System.getProperty("Yser.dir"));
+            System.out.println("Current dir is : " + System.getProperty("User.dir"));
             System.exit(1);
         }
         return  null;
